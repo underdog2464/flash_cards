@@ -1,0 +1,22 @@
+<p>
+  <strong>Front: </strong>
+  <%= @card.front %>
+</p>
+
+<button onclick="flipCard()">Answer</button>
+
+<p>
+  <strong id="title"></strong>
+  <p id="back"></p>
+</p>
+
+<script>
+function flipCard() {
+  document.getElementById("title").innerHTML = "Back";
+  document.getElementById("back").innerHTML = "<%= @card.back %>";
+}
+</script>
+  
+
+
+<%= link_to "Back to Deck", deck_path(@deck) %>

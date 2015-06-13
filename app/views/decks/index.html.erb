@@ -1,0 +1,26 @@
+<h1>List of Decks</h1>
+
+<%= link_to 'Create New Deck', new_deck_path %>
+
+<br><br>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Cards</th>
+    <th></th>
+  </tr>
+
+  <% @decks.each do |deck| %>
+    <tr>
+      <td><%= link_to deck.name, deck_path(deck) %></td>
+      <td><%= deck.desc %></td>
+      <td><%= deck.cards.count %></td>
+      <td><%= link_to 'Delete', deck_path(deck),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+

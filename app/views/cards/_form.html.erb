@@ -1,0 +1,17 @@
+<%= form_for([@deck, @deck.cards.build]) do |f| %>
+
+<p>
+  <%= f.label :front %>
+  <%= f.text_area :front, size: "40x8" %>
+</p>
+
+<p>
+  <%= f.label :back %>
+  <%= f.text_area :back, size: "40x8" %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>

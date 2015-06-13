@@ -1,0 +1,21 @@
+<p>
+  <strong>Deck Name:</strong>
+  <%= @deck.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @deck.desc %>
+</p>
+
+<p>
+  <strong>Cards: </strong>
+  <%= @deck.cards.count %>
+  <%= link_to 'show cards', deck_cards_path(@deck) %>
+</p>
+
+<p>
+ <%= link_to 'Create Card', new_deck_card_path(@deck) %>
+ <%= link_to 'Create Card 2', [:new, @deck, :card] %>
+ <%= link_to 'back to decks', decks_path %>
+</p>
